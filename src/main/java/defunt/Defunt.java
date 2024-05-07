@@ -22,6 +22,9 @@ public class Defunt extends PanacheEntity {
     public String cimetiere;
     public String adresseCimetiere;
     //@ElementCollection
+    public String quartier;
+    public String avenue;
+    public String numeroTombo;
     //public List<MultiMedia> multiMedias;
 
 }
