@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/quarkus-app/quarkus-run.jar
+web: java $JAVA_OPTS -jar target/org.memoscan-1.0.0-SNAPSHOT-runner.jar
