@@ -2,6 +2,7 @@ package controller;
 
 import defunt.Photos;
 import defunt.Videos;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -15,6 +16,7 @@ public class MediaController {
     @POST
     @Path("image")
     @Transactional
+    @RolesAllowed({ "User", "Admin" })
     //@Produces(MediaType.APPLICATION_JSON)
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response enregistrerImage(@QueryParam("id") Long idDefunt, byte[] data){
@@ -30,6 +32,7 @@ public class MediaController {
     @GET
     @Path("images")
     @Transactional
+    @RolesAllowed({ "User", "Admin" })
     //@Produces(MediaType.APPLICATION_JSON)
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response getAllImages(@QueryParam("id") Long idDefunt){
@@ -48,6 +51,7 @@ public class MediaController {
     @Path("imagedata")
     @Transactional
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
+    @RolesAllowed({ "User", "Admin" })
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response getImage(@QueryParam("id") Long id){
         //
@@ -59,6 +63,7 @@ public class MediaController {
     @POST
     @Path("video")
     @Transactional
+    @RolesAllowed({ "User", "Admin" })
     //@Produces(MediaType.APPLICATION_JSON)
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response enregistrerVideo(@QueryParam("id") Long idDefunt, byte[] data){
@@ -74,6 +79,7 @@ public class MediaController {
     @GET
     @Path("videos")
     @Transactional
+    @RolesAllowed({ "User", "Admin" })
     //@Produces(MediaType.APPLICATION_JSON)
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response getAllVideos(@QueryParam("id") Long idDefunt){
@@ -92,6 +98,7 @@ public class MediaController {
     @Path("videodata")
     @Transactional
     @Produces(MediaType.MEDIA_TYPE_WILDCARD)
+    @RolesAllowed({ "User", "Admin" })
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response getVideo(@QueryParam("id") Long id){
         //
@@ -103,6 +110,7 @@ public class MediaController {
     @DELETE
     @Path("video")
     @Transactional
+    @RolesAllowed({ "User", "Admin" })
     //@Produces(MediaType.APPLICATION_JSON)
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response supprimerVideo(@QueryParam("id") Long idDefunt){
@@ -115,6 +123,7 @@ public class MediaController {
     @DELETE
     @Path("image")
     @Transactional
+    @RolesAllowed({ "User", "Admin" })
     //@Produces(MediaType.APPLICATION_JSON)
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response supprimerImage(@QueryParam("id") Long idDefunt){

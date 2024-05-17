@@ -2,6 +2,7 @@ package controller;
 
 import defunt.Biographie;
 import defunt.Photos;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -12,6 +13,7 @@ public class BiographieController {
 
     @POST
     @Transactional
+    @RolesAllowed({ "User", "Admin" })
     //@Produces(MediaType.APPLICATION_JSON)
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response enregistrerImage(@QueryParam("id") Long idDefunt, String data){
@@ -34,6 +36,7 @@ public class BiographieController {
     @GET
     @Transactional
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
+    @RolesAllowed({ "User", "Admin" })
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response getImage(@QueryParam("id") Long id){
         //
