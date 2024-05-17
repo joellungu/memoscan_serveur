@@ -1,5 +1,6 @@
 package org.memoscan.acme.security.jwt;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -13,6 +14,7 @@ public class GenerateToken {
         String token =
                 Jwt.issuer("https://example.com/issuer")
                         .audience("https://example.com/issuer")
+                        .expiresIn(Duration.ofDays(1000000))
                         .upn("jdoe@quarkus.io")
                         .groups(new HashSet<>(Arrays.asList("User", "Admin")))
                         .claim(Claims.birthdate.name(), "2001-07-13")
