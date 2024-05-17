@@ -19,7 +19,7 @@ public class DefuntController {
     @Path("{nom}/{date}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     @Transactional
     public Response getAllDefunt(@PathParam("nom") String nom, @PathParam("date") String date){
         //
@@ -68,7 +68,7 @@ public class DefuntController {
     @Path("by/{nom}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     @Transactional
     public Response getAllDefuntBy(@PathParam("nom") String nom){
         //
@@ -116,7 +116,7 @@ public class DefuntController {
     @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     @Transactional
     public Response getAllDefunts(){
         //
@@ -129,7 +129,7 @@ public class DefuntController {
     @PUT
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     @Consumes(MediaType.APPLICATION_JSON)
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     @Transactional
     public Response getProfile(Defunt defunt){
         //
@@ -151,7 +151,7 @@ public class DefuntController {
     @Path("one/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     @Transactional
     public Response getOneDefunt(@PathParam("id") Long id){
         //
@@ -180,7 +180,7 @@ public class DefuntController {
     @Path("scan")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     @Transactional
     public Response getScanQrCode(@QueryParam("qrcode") String qrcode){
         //
@@ -214,7 +214,7 @@ public class DefuntController {
     @Path("profile")
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     @Consumes(MediaType.APPLICATION_JSON)
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     @Transactional
     public Response getProfile(@QueryParam("id") Long id){
         //
@@ -228,7 +228,7 @@ public class DefuntController {
     @Path("checkprofile")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     @Transactional
     public Response getCheckProfile(@QueryParam("id") Long id){
         //
@@ -246,7 +246,7 @@ public class DefuntController {
     @Path("profile")
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     @Consumes(MediaType.APPLICATION_JSON)
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     @Transactional
     public Response getProfile(@QueryParam("id") Long id, byte[] photo){
         //
@@ -261,7 +261,7 @@ public class DefuntController {
 
     @POST
     @Transactional
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     //@Produces(MediaType.APPLICATION_JSON)
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response enregistrer(Defunt defunt){
@@ -274,7 +274,7 @@ public class DefuntController {
     @POST
     @Path("liste")
     @Transactional
-    @RolesAllowed({ "User", "Admin" })
+    //@RolesAllowed({ "User", "Admin" })
     //@Produces(MediaType.APPLICATION_JSON)
     //@Consumes(MediaType.APPLICATION_JSON)
     public Response getAllDefOf(List<String> defs){
