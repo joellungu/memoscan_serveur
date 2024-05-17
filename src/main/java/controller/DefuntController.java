@@ -1,6 +1,7 @@
 package controller;
 
 import defunt.Defunt;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.Past;
 import jakarta.ws.rs.*;
@@ -113,6 +114,7 @@ public class DefuntController {
     @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+    @RolesAllowed({ "User", "Admin" })
     @Transactional
     public Response getAllDefunts(){
         //
