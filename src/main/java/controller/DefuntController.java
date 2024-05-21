@@ -254,6 +254,7 @@ public class DefuntController {
         //
         defunt.profile = photo;
         defunt.photoProfile = true;
+        defunt.persist();
         //
         return Response.ok().build();
         //
